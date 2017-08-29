@@ -1,0 +1,71 @@
+body {
+    background: #ccc;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    margin: 0;
+}
+
+#moves {
+    text-align: center;
+    font-size: 2em;
+}
+
+#gameTable {
+    background: #34495e;
+    margin: 0 auto;
+    border: 4px solid #34495e;
+    border-radius: 1em;
+    max-width: 500px;
+    position: relative;
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+
+.cell {
+    position: absolute;
+    background: #7f8c8d;
+    border-radius: 8px;
+    color: #2c3e50;
+    width: 21%;
+    height: 21%;
+    margin: .75%;
+    line-height: 1;
+    font-size: 6em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cell.hover {
+    background: #bdc3c7;
+}
+
+.clickArea {
+    position: absolute;
+    opacity: 0;
+    width: 25%;
+    height: 25%;
+}
+
+.clickArea:before {
+    content: ' ';
+}
+
+#win {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 1em;
+    background: rgba(255, 255, 255, 0.4);
+    padding-top: 2em;
+    font-size: 1.5em;
+}
