@@ -1,5 +1,7 @@
 function setGameTableHeight() {
-    $('#gameTable').height($('#gameTable').width())
+    var winHeight = $(window).height()-150;
+    $('#gameTable').height(Math.min($('#gameTable').width(),winHeight);
+    $('.cell').css('font-size', ($('.cell').height()-20)+'px');
 }
 
 function getCell(x, y) {
@@ -47,8 +49,6 @@ function checkWin(){
 
 var moves = 0;
 
-setGameTableHeight();
-$(window).resize(setGameTableHeight);
 
 var cellArray = [];
 {
@@ -135,4 +135,6 @@ $('.clickArea').on('hover, mouseover', function(){
     moves++;
     $('#moves').html('Moves: '+(moves));
     checkWin();
-})
+});
+setGameTableHeight();
+$(window).resize(setGameTableHeight);
