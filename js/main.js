@@ -1,7 +1,8 @@
 function setGameTableHeight() {
     var winHeight = $(window).height()-150;
-    $('#gameTable').height(Math.min($('#gameTable').width(),winHeight);
-    $('.cell').css('font-size', ($('.cell').height()-20)+'px');
+    var w = Math.min(600, Math.min($(window).width(),winHeight));
+    $('#gameTable').height(w).width(w);
+    $('.cell').css('font-size', ($('.cell').height()*0.9)+'px');
 }
 
 function getCell(x, y) {
@@ -52,15 +53,28 @@ var moves = 0;
 
 var cellArray = [];
 {
-    var array = [];
-    for(var i = 1; i <= 16; i++)
-        array.push(i);
-    shuffle(array);
+    function clickCell(x, y) {
+        var c00 = cellArray[x][y], c01 = cellArray[x][y+1], c10 = cellArray[x+1][y], c11 = cellArray[x+1][y+1];
+	cellArray[x][y] = c01;
+	cellArray[x][y+1] = c11;
+	cellArray[x+1][y] = c00;
+	cellArray[x+1][y+1] = c10;
+    }
+/*    $c00.attr('id', 'cell-'+(x)+'-'+(y+1));//x,y -> x, y+1
+    $c01.attr('id', 'cell-'+(x+1)+'-'+(y+1));//x, y+1 -> x+1, y+1
+    $c10.attr('id', 'cell-'+(x)+'-'+(y));// x+1, y -> x, y
+    $c11.attr('id', 'cell-'+(x+1)+'-'+(y));*/
+
     for(var i = 0; i < 4; i++) {
         cellArray.push([])
         for(var j = 0; j < 4; j++) {
-            cellArray[i].push(array[4*i+j]);
+            cellArray[i].push(4*i+j+1);
         }
+    }
+    for(var rpt = 0; rpt < 10000; rpt++) {
+        var x = parseInt(Math.random()*3);
+        var y = parseInt(Math.random()*3);
+	clickCell(x, y);
     }
 }
 for(var i = 0; i < 4; i++) {
