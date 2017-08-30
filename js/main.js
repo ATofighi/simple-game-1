@@ -58,7 +58,8 @@ var cellArray = [];
 	cellArray[x][y] = c10;
 	cellArray[x][y+1] = c00;
 	cellArray[x+1][y] = c11;
-	cellArray[x+1][y+1] = c10;
+	cellArray[x+1][y+1] = c01;
+
     }
 
     for(var i = 0; i < 4; i++) {
