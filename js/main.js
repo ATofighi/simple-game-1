@@ -1,6 +1,5 @@
 function setGameTableHeight() {
-    var winHeight = $(window).height()-150;
-    var w = Math.min(600, Math.min($(window).width(),winHeight));
+    var w = Math.min(600, Math.min($(window).width()-50,$(window).height()-150));
     $('#gameTable').height(w).width(w);
     $('.cell').css('font-size', ($('.cell').height()*0.9)+'px');
 }
