@@ -55,15 +55,11 @@ var cellArray = [];
 {
     function clickCell(x, y) {
         var c00 = cellArray[x][y], c01 = cellArray[x][y+1], c10 = cellArray[x+1][y], c11 = cellArray[x+1][y+1];
-	cellArray[x][y] = c01;
-	cellArray[x][y+1] = c11;
-	cellArray[x+1][y] = c00;
+	cellArray[x][y] = c10;
+	cellArray[x][y+1] = c00;
+	cellArray[x+1][y] = c11;
 	cellArray[x+1][y+1] = c10;
     }
-/*    $c00.attr('id', 'cell-'+(x)+'-'+(y+1));//x,y -> x, y+1
-    $c01.attr('id', 'cell-'+(x+1)+'-'+(y+1));//x, y+1 -> x+1, y+1
-    $c10.attr('id', 'cell-'+(x)+'-'+(y));// x+1, y -> x, y
-    $c11.attr('id', 'cell-'+(x+1)+'-'+(y));*/
 
     for(var i = 0; i < 4; i++) {
         cellArray.push([])
