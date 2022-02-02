@@ -1,5 +1,6 @@
 body {
     background: #ccc;
+    text-align: center;
 }
 
 h1 {
@@ -68,4 +69,50 @@ h1 {
     background: rgba(255, 255, 255, 0.4);
     padding-top: 2em;
     font-size: 1.5em;
+}
+a{
+  font-weight: bold;
+  padding: 0.25rem;
+  margin: 1px auto;
+  display: block;
+  width: 150px;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+  border-radius: 0.75rem;
+}
+a:hover{
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  box-shadow: 0 3px 0.5rem #2c3e50
+}
+
+table{
+  width: 100%;
+  max-width: 500px;
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+td,
+th{
+  padding: 0.3rem;
+}
+tr th:first-child,
+tr th:nth-child(2){
+  width: 50px;
+}
+tr th:nth-child(3),
+tr td:nth-child(3){
+  text-align: left;
+}
+tr{
+  border-bottom: 1px solid #2c3e50;
+}
+thead tr{
+  color: white;
+  background-color: #2c3e50;
+}
+tbody tr:nth-child(2n+1) td{
+  background-color: rgba(255, 255, 255, 0.4);
 }

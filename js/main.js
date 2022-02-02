@@ -44,7 +44,7 @@ function checkWin(){
     $win.hide();
     $('#gameTable').append($win);
     $win.fadeIn().html('<h2>Win</h2>Moves: '+moves);
-
+    return true;
 }
 
 var moves = 0;
@@ -144,7 +144,10 @@ $('.clickArea').on('hover, mouseover', function(){
     }, 300);
     moves++;
     $('#moves').html('Moves: '+(moves));
-    checkWin();
+    if (checkWin()) {
+      document.body.innerHTML += '<form id="form" action="/leaderboard" method="post"><input type="hidden" name="moves" value="'+moves+'"></form>';
+      document.getElementById("form").submit();
+    }
 });
 setGameTableHeight();
 $(window).resize(setGameTableHeight);
